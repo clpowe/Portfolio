@@ -17,17 +17,7 @@ export default defineConfig({
 		storyblok({
 			accessToken: 'Jr6JDokGOICQ5DJvv8unxQtt',
 			components: {
-				page: 'storyblok/Page',
-				config: 'storyblok/Config',
-				feature: 'storyblok/Feature',
-				grid: 'storyblok/Grid',
-				teaser: 'storyblok/Teaser',
-				hero: 'storyblok/Hero',
-				menu: 'storyblok/Menu',
-				list: 'storyblok/List',
-				volume: 'storyblok/Volume',
-				listMenu: 'storyblok/ListMenu',
-				info: 'storyblok/Information'
+				// Add your components here
 			},
 			apiOptions: {
 				region: 'us'

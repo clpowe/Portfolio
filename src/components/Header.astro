@@ -1,0 +1,18 @@
+---
+import { useStoryblokApi } from '@storyblok/astro'
+const storyblokApi = useStoryblokApi()
+const { data } = await storyblokApi.get('cdn/stories/config', {
+  version: 'draft',
+  resolve_links: 'url'
+})
+const headerMenu = data?.story?.content?.header_menu
+---
+
+<header>
+  <div class='flex justify-between border-b-2 border-gray-900 mt-4'>
+    <div class='name uppercase font-bold'>Christopher Powe</div>
+    <div class='fill-red-100 sm:hidden'>
+      <!-- <Icon name="ic:baseline-menu" @click="toogleMenu" size="30" /> -->
+    </div>
+  </div>
+</header>
