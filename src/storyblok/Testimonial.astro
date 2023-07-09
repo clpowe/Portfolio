@@ -1,0 +1,16 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+import { Image } from '@astrojs/image/components'
+
+const { blok } = Astro.props
+---
+
+<div class='flex flex-col' {...storyblokEditable(blok)}>
+  <p>
+    {blok.testimonial}
+  </p>
+  <div class='self-end'>
+    <p class='font-bold'>{blok.name}</p>
+    <p>{blok.title}</p>
+  </div>
+</div>

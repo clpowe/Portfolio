@@ -29,7 +29,8 @@ export default defineConfig({
 				volume: 'storyblok/Volume',
 				listMenu: 'storyblok/ListMenu',
 				info: 'storyblok/Information',
-				projectCard: 'storyblok/ProjectCard'
+				projectCard: 'storyblok/ProjectCard',
+				testimonial: 'storyblok/Testimonial'
 			},
 			apiOptions: {
 				region: 'us'
