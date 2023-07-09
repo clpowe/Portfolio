@@ -1,5 +1,17 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
+
+const { blok } = Astro.props
+---
+
 <section
-  class='overflow-scroll border-b-2 border-black pb-4 sm:border-l-2 sm:border-b-0 sm:pl-4 sm:col-span-2 bg-amber'
+  {...storyblokEditable(blok)}
+  class='overflow-scroll border-b-2 border-black pb-4 sm:border-l-2 sm:border-b-0 sm:pl-4 sm:col-span-2 space-y-8'
 >
-  list of things
+  {
+    blok.projects?.map((blok) => {
+      return <StoryblokComponent blok={blok} />
+    })
+  }
 </section>

@@ -1,0 +1,41 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+import { Image } from '@astrojs/image/components'
+
+const { blok } = Astro.props
+---
+
+<div {...storyblokEditable(blok)}>
+  <a>
+    <Image
+      src={blok.cover.filename}
+      alt={blok.cover.alt}
+      aspectRatio='16:9'
+      height={300}
+      class='grayscale contrast-100 hover:grayscale-0 hover:contrast-100'
+    />
+  </a>
+  <h3 class='title'>{blok.title}</h3>
+  <p>
+    {blok.description}
+  </p>
+  <div class='flex flex-row items-center gap-4'>
+    <a href='' class='flex flex-row items-center gap-1'>
+      <!-- <Icon name='ic:baseline-web' size='30' /> -->
+      Live</a
+    >
+
+    <a href='' class='flex flex-row items-center gap-1'>
+      <!-- <Icon name='carbon:logo-github' size='30' /> -->
+      Code</a
+    >
+  </div>
+</div>
+
+<style scoped>
+  .title {
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+</style>

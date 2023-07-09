@@ -1,5 +1,19 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+import { Image } from '@astrojs/image/components'
+
+const { blok } = Astro.props
+---
+
 <aside
   class='hidden row-start-1 row-end-3 sm:border-r-2 sm:border-black p-4 sm:flex items-start flex-col'
+  {...storyblokEditable(blok)}
 >
-  Menu
+  <Image
+    src={blok.image.filename}
+    alt={blok.image.alt}
+    aspectRatio='9:16'
+    height={300}
+    class='grayscale contrast-100 hover:grayscale-0 hover:contrast-100'
+  />
 </aside>

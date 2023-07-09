@@ -3,6 +3,7 @@ import storyblok from '@storyblok/astro'
 import { loadEnv } from 'vite'
 import UnoCSS from 'unocss/astro'
 import basicSsl from '@vitejs/plugin-basic-ssl'
+import image from '@astrojs/image'
 const env = loadEnv('', process.cwd(), 'STORYBLOK')
 
 // https://astro.build/config
@@ -27,7 +28,8 @@ export default defineConfig({
 				list: 'storyblok/List',
 				volume: 'storyblok/Volume',
 				listMenu: 'storyblok/ListMenu',
-				info: 'storyblok/Information'
+				info: 'storyblok/Information',
+				projectCard: 'storyblok/ProjectCard'
 			},
 			apiOptions: {
 				region: 'us'
@@ -35,6 +37,9 @@ export default defineConfig({
 		}),
 		UnoCSS({
 			injectReset: true
+		}),
+		image({
+			serviceEntryPoint: '@astrojs/image/sharp'
 		})
 	]
 })
